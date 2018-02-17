@@ -1,0 +1,598 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>Python en la Web</title>
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/devpython.css">
+
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="lib/css/onedark.css">
+
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+
+        <style>
+            @font-face {
+                font-family: 'heroregular';
+                font-style: normal;
+                font-weight: normal;
+                src: url('/css/Hero.otf');
+            }
+            body {
+                font-family: 'heroregular' !important;
+                background-image: url('/img/bg.svg');
+                background-size: cover;
+            }
+
+            h1, h2, h3, h4, p, li {
+                font-family: 'heroregular' !important;
+            }
+
+            .red {
+                color:#c0392b;
+            }
+
+            .reveal {
+                background-color: rgba(0, 0, 0, 0.6);
+            }
+            .web-link {
+                font-style: italic;
+                font-size: 0.5px;
+            }
+            ul {
+				font-size: 27px !important;
+			}
+			table {
+				font-size: 27px !important;
+			}
+			.help-block {
+				font-size: 18px !important;
+			}
+			.text-block {
+				text-align: justify !important;
+			}
+			.inline-code {
+				font-size: 19px !important;
+			}
+        </style>
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section data-bg="img/bg.svg">
+                    <h1>MI PRIMER DÍA CON
+                        <span class="red">Python</span> en la Web</h1>
+                    <p>
+                        <small> Franz Emil Eulate Chacolla </small>
+                    </p>
+                </section>
+                <section>
+                    <section data-bg="img/bg.svg">
+                        <h2>
+                            QUE ES
+                            <span class="red">PYTHON</span> ?
+                        </h2>
+                    </section>
+                    <section>
+                        <h2>CARASTERÍSTICAS</h2>
+                        <ul>
+                            <li>Interpretado</li>
+                            <li>Alto Nivel</li>
+                            <li>Multiparadigma</li>
+                            <li>Multiplataforma</li>
+                            <li>Open Source</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>POR QUE USAR PYTHON?</h3>
+                        <ul>
+                            <li>Facil de aprender</li>
+                            <li>Sintaxis muy limpia y sencilla</li>
+                            <li>Hay que escribir menos</li>
+                            <li>Obtienes resultados muy rápido</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Hola mundo en otros lenguages</h2>
+                        <pre><code data-trim data-noescape>
+                                      // Hello World in Java 
+                                      class HelloWorld { 
+                                          static public void main( String args[] ) { 
+                                              System.out.println( "Hello World!"); 
+                                          } 
+                                      }
+                                      </code></pre>
+                        <pre><code data-trim data-noescape>
+                                      // Hello World in C# 
+                                      using System;
+                                      
+                                      class MainClass { 
+                                          public static void Main() { 
+                                              Console.WriteLine("¡Hola mundo!"); 
+                                          } 
+                                      }
+                                      </code></pre>
+                    </section>
+                    <section>
+                        <h2>Hola mundo en otros lenguages</h2>
+                        <pre><code data-trim>
+                                                   &#60?php 
+                                                   // Hello World in PHP
+                                                   echo 'Hola Mundo!';
+                                                   ?&#62 
+                                            </code></pre>
+                        <pre><code data-trim data-noescape>
+                                                   # Hello World in Python
+                                                   print "Hola Mundo"
+                                            </code></pre>
+                    </section>
+                    <section>
+                        <h2>DISTINTOS TIPOS DE APLICACIONES</h2>
+                        <ul>
+                            <li>Aplicaciones de Escritorio</li>
+                            <li>Aplicaciones Web</li>
+                            <li>Scripts</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>POR QUÉ ELEGIR PYTHON</h2>
+                        <ul>
+                            <li>Muchos lo usan (Google, Nokia)</li>
+                            <li>Gran cantidad de Modulos</li>
+                            <li>Una gran comunidad</li>
+                            <li>Viene preinstalado en Mac y Linux</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>COMO VA HOY EN DÍA</h2>
+                        <img src="/img/top.png" alt="">
+                        <i class="web-link">Fuente: http://tiobe.com/tiobe-index/</i>
+                    </section>
+                </section>
+                <section>
+                    <section>
+<h2>Cosas a considerar</h2>
+                    </section>
+                    <section>
+                        <h3>Instalación de Paquetes</h3>
+                        <p class="text-block">
+                            <small>Medinate el comando pip</small>
+                        </p>
+                        <p class="text-block">
+                            <small>Recomendable tener un archivo
+                                <strong>requirements.txt</strong> en cada proyecto</small>
+                        </p>
+                        <pre><code data-trim data-noscape>
+                    							pip install nombre_paquete==version
+                    							pip uninstall nombre_paquete
+                    							pip list
+                    							pip freeze
+                    						</code></pre>
+                    
+                    </section>
+                    <section>
+                        <h3>Entornos Virtuales</h3>
+                        <div class="text-block">
+                            <small>
+                                Contenedor de librerias de python
+                            </small>
+                        </div>
+                        <p class="text-block">
+                            <small>
+                                Tener un entorno para cada proyecto
+                            </small>
+                        </p>
+                        <pre><code data-trim data-noscape>
+                    							pip install virtualenv
+                    							pip install virtualenvwrapper
+                    
+                    							# Creacion de entornos
+                    							virtualenv mi_entorno
+                    							source mi_entorno/bin/activate
+                    
+                    							# Creacion de entornos con wrapper
+                    							mkvirtualenv mi_entorno
+                    							workon mi_entorno
+                    
+                    							# Salir del entorno
+                    							deactivate
+                    
+                    						</code></pre>
+                    </section>
+                </section>
+
+                <section>
+                    <section data-bg="img/bg_web.svg">
+                        <h2> PYTHON EN LA <span class="red">WEB</span></h2>
+                    </section>
+                    <section>
+                        <h2> COMO FUNCIONA ?</h2>
+                        <img src="img/web_plantilla.svg" alt="">
+                    </section>
+                    <section>
+                        <h2> COMO FUNCIONA REST ?</h2>
+                        <img src="img/web_rest.svg" alt="">
+                    </section>
+                </section>
+                <section>
+                    <section data-bg="img/bg_frameworks.svg">
+                        <h2>QUE <span class="red">FRAMEWORKS </span> EXISTE ?</h2>
+                    </section>
+                    <section>
+                        <h2> DJANGO </h2>
+                        <p>
+                        <ul>
+                            <li>CLI</li>
+                            <li>ORM</li>
+                            <li>MIGRACIONES</li>
+                            <li>ADMIN</li>
+                            <li>MIDDLEWARES</li>
+                            <li>AUTHENTICATIONS BACKENDS</li>
+                            <li>CONTEXT PROCESORS</li>
+                            <li> .... y otras cosas mas.</li>
+                            <li>DRY (No te repitas a ti mismo!.)</li>
+                        </ul>
+                        </p>
+                    </section>
+                    <section>
+                        <h2>FLASK</h2>
+                        <p>
+                            <ul>
+                                <li>ES UN MICROFRAMEWORK</li>
+                                <li>INCLUYE UN SERVIDOR WEB DE DESARROLLO</li>
+                                <li>NO TIENE UN ORM?</li>
+                                <li>MUCHO MAS SENCILLO QUE DJANGO</li>
+                            </ul>
+                        </p>
+                    </section>
+                </section>
+                    <section>
+                        <section>
+                            <h2>UN VISTAZO A DJANGO</h2>
+                        </section>
+
+                    <section>
+                        <h3>Estructura</h3>
+                        <ul style="font-size:27px;">
+                            <li>
+                                nombre_del_proyecto
+                                <ul>
+                                    <li>manage.py</li>
+                                    <li>nombre_del_proyecto
+                                        <ul>
+                                            <li>__init__.py</li>
+                                            <li>settings.py</li>
+                                            <li>urls.py</li>
+                                            <li>urls.py</li>
+                                        </ul>
+                                    </li>
+                                    <li>nombre_aplicacion
+                                        <ul>
+                                            <li>__init__.py</li>
+                                            <li>apps.py</li>
+                                            <li>admin.py</li>
+                                            <li>models.py</li>
+                                            <li>views.py</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Bases de Datos</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Configuración</th>
+                                    <th>Base de datos</th>
+                                    <th>Adaptador requerido</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <code>postgresql</code>
+                                    </td>
+                                    <td>PostgreSQL</td>
+                                    <td>
+                                        <a href="http://www.djangoproject.com/r/python-pgsql/1/">psycopg versión 1.x</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <code>postgresql_psycopg2</code>
+                                    </td>
+                                    <td>PostgreSQL</td>
+                                    <td>
+                                        <a href="http://www.djangoproject.com/r/python-pgsql/">psycopg versión 2.x</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <code>mysql</code>
+                                    </td>
+                                    <td>MySQL</td>
+                                    <td>
+                                        <a href="http://www.djangoproject.com/r/python-mysql/">MySQLdb</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <code>sqlite3</code>
+                                    </td>
+                                    <td>SQLite</td>
+                                    <td>No necesita adaptador si se usa Python 2.5+. En caso contrario,
+                                        <a href="http://www.djangoproject.com/r/python-sqlite/">pysqlite</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <code>ado_mssql</code>
+                                    </td>
+                                    <td>Microsoft SQL Server</td>
+                                    <td>
+                                        <a href="http://www.djangoproject.com/r/python-ado/">adodbapi version 2.0.1+</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <code>oracle</code>
+                                    </td>
+                                    <td>Oracle</td>
+                                    <td>
+                                        <a href="http://www.djangoproject.com/r/python-oracle/">cx_Oracle</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section>
+                        <h3>Configuración de Base de Datos</h3>
+                        <pre>
+                    							<code  data-trim data-noescape>
+                    								DATABASES = {
+                    								    'default': {
+                    								        'ENGINE': 'django.db.backends.postgresql',
+                    								        'NAME': 'evaluaciondb',
+                    								        'HOST': '172.16.0.142',
+                    								        'USER': 'postgres',
+                    								        'PASSWORD': 'sistemas',
+                    								    }
+                    								}
+                    							</code>
+                    						</pre>
+                    </section>
+                    <section>
+                        <h3>Aplicaciones</h3>
+                        <p class="text-block">
+                            <small>Son paquetes independientes entre se sí, cada uno contiene:</small>
+                        </p>
+                        <ul>
+                            <li>models.py
+                                <i class="help-block"> // Donde se define la estructura del DB</i>
+                            </li>
+                            <li>apps.py
+                                <i class="help-block"> // Configuracion de la apliacion</i>
+                            </li>
+                            <li>migrations/
+                                <i class="help-block"> // Migraciones de los modelos</i>
+                            </li>
+                            <li>views.py
+                                <i class="help-block"> // Vistas (Controlador) de la aplicacion</i>
+                            </li>
+                            <li>*admin.py
+                                <i class="help-block"> // Configuracion de los models dentro del admin</i>
+                            </li>
+                            <li>*task.py
+                                <i class="help-block"> // Areas dentro la aplicacions que requerian un procesamiento externo</i>
+                            </li>
+                            <li>*utils.py
+                                <i class="help-block"> // Tareas comunes (helpers)</i>
+                            </li>
+                        </ul>
+                        <p class="text-block">
+                            <small>Se deben registrar dentro del archivo
+                                <strong>settings.py</strong>
+                            </small>
+                            <pre><code data-trim data-noescape>
+                    								INSTALLED_APPS = [
+                    										...
+                    								    'django.contrib.staticfiles',
+                    								    'nombre_aplicacion'
+                    								]
+                    							</code></pre>
+                        </p>
+                    </section>
+                    <section>
+                        <h3>Modelos</h3>
+                        <div class="text-block">
+                            <small>Es la representación de la DB mediante objetos, cada modelo equivale a un tabla</small>
+                        </div>
+                        <pre><code data-trim data-noescape>
+                    							from django.db import models
+                    
+                    							class Tabla(models.Model):
+                    							    atributo = models.CharField(max_lenght=150, null=True)
+                    							    int_atribute = models.IntegerField(default=0)
+                    							    fecha_registro = models.DateTimeField(auto_now=True)
+                    						</code></pre>
+                    </section>
+                    <section>
+                        <h3>Vistas</h3>
+                        <div class="text-block">
+                            <small>Contiene la lógica de la aplicación, existen dos tipos</small>
+                        </div>
+                        <pre><code data-trim data-noscape>
+                    							from django.views import View
+                    
+                    							def vista_funcion(request):
+                    							    if request.method == 'GET':
+                    							        .....
+                    							    if request.method == 'POST':
+                    							        .....
+                    
+                    							class VistaClase(View):
+                    							    def get(self, request):
+                    							        ....
+                    							    def post(self, request):
+                    							        ....
+                    						</code></pre>
+                    </section>
+                    <section>
+                        <h3>Rutas</h3>
+                        <p class="text-block">
+                            <small>Establece los puntos de acceso</small>
+                        </p>
+                        <pre><code data-trim data-noscape>
+                    							from .mis_vistas import vista_funcion, VistaClase
+                    							from django.urls import url
+                    
+                    							urlspatterns = [
+                    								url(r'^/ruta_a_function/$', vista_funcion),
+                    								url(r'^/ruta_a_clase/$', VistaClase.as_view()),
+                    							]
+                    
+                    						</code></pre>
+                    </section>
+                    <section>
+                        <h3>Flujo</h3>
+                        <img src="/img/djagno_flujo.jpg" alt="">
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2> HERRAMIENTAS DE DESARROLLO </h2>
+                    </section>
+                    <section>
+                        <h3>IDES (ENTORNOS DE DESARROLLO INTEGRADO)</h3>
+                    </section>
+                    <section>
+                        <h3>pycharm</h3>
+                        <ul>
+                            <li>Conexión para base de datos.</li>
+                            <li>Corrección y automplentado de codigo excelente.</li>
+                            <li>CLI django integrado.</li>
+                            <li>Entornos Virtuales.</li>
+                            <li>Cliente APIRest.</li>
+                            <li>Debuging</li>
+                        </ul>
+                        <a href="https://www.jetbrains.com/pycharm/">https://www.jetbrains.com/pycharm/</a>
+                    </section>
+                    <section>
+                        <h3>LiClipse</h3>
+                        <ul>
+                            <li>Codigo abierto</li>
+                            <li>Entornos Virtuales</li>
+                            <li>Base de Datos a traves de plugins.</li>
+                            <li>Corrección y automplentado de codigo bueno.</li>
+                        </ul>
+                        <a href="http://www.liclipse.com/">http://www.liclipse.com/</a>
+                    </section>
+                    <section>
+                        <h3>Editores de Texto</h3>
+                    </section>
+                    <section>
+                        <h3>SublimeText3</h3>
+                        <ul>
+                            <li>Rapido</li>
+                            <li>Fremium</li>
+                            <li>Entornos Virtuales</li>
+                            <li>Go to Definition</li>
+                            <li>Autocomplementado malo (CodeIntel)</li>
+                            <li>Paquetes limitados para python</li>
+                            <li>Snippets</li>
+                            <li>Configuracion Tediosa</li>
+                        </ul>
+                        <a href="https://www.sublimetext.com/3">https://www.sublimetext.com/3</a>
+                    </section>
+                    <section>
+                        <h3>Atom</h3>
+                        <ul>
+                            <li>Codigo Abierto</li>
+                            <li>Moderamente Rapido</li>
+                            <li>Go to Definition</li>
+                            <li>Autocomplementado bueno (python-autocomplete)</li>
+                            <li>Configuracion Facil</li>
+                        </ul>
+                        <a href="https://atom.io/">https://atom.io/</a>
+                    </section>
+                    <section>
+                        <h3>Visual Studio Code</h3>
+                        <ul>
+                            <li>Codigo Abierto</li>
+                            <li>Moderamente Rapido</li>
+                            <li>Go to Definition</li>
+                            <li>Autocomplementado bueno (intelligence)</li>
+                            <li>Configuracion Tediosa</li>
+                        </ul>
+                        <a href="https://code.visualstudio.com/">https://code.visualstudio.com/</a>
+                    </section>
+                    <section>
+                        <h3>Paquetes</h3>
+                        <ul>
+                            <li>
+                                <a href="https://github.com/jazzband/django-debug-toolbar">Django Debug ToolBar</a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/ottoyiu/django-cors-headers">Django Cors Headers</a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/gregmuellegger/django-autofixture">AutoFixture</a>
+                            </li>
+                            <li>
+                                <a href="https://channels.readthedocs.io/en/latest/">Django Channels</a>
+                            </li>
+                            <li>
+                                <a href="http://www.celeryproject.org/">Celery</a>
+                            </li>
+                        </ul>
+                    </section>
+                </section>
+                <section data-bg="img/bg_bye.svg">
+                    <h2>GRACIAS</h2>
+                </section>
+            </div>
+        </div>
+    
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+    
+        <script>
+            // More info about config & dependencies:
+            // - https://github.com/hakimel/reveal.js#configuration
+            // - https://github.com/hakimel/reveal.js#dependencies
+            Reveal.initialize({
+                margin: 0.0,
+                dependencies: [
+                    { src: 'plugin/markdown/marked.js' },
+                    { src: 'plugin/markdown/markdown.js' },
+                    { src: 'plugin/notes/notes.js', async: true },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+                ]
+            });
+
+            Reveal.configure({ showSlideNumber: 'speaker' });
+            Reveal.addEventListener('slidechanged', function (event) {
+                var slide = event.currentSlide;
+                if (slide) {
+                    var bgImage = slide.dataset['bg'];
+                    if (bgImage) {
+                        document.body.style.backgroundImage = "url(/" + bgImage + ")";
+                    }
+                }
+            });
+
+        </script>
+    </body>
+</html>
